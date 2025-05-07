@@ -1,17 +1,30 @@
 import {useState} from "react";
-export default function AddCharacter(){
+
+type character = {
+    name: string;
+    type: string;
+    gender: string
+}
+export default function AddCharacter() {
+    const [character, setCharacter] = useState<character>({
+        name: "",
+        type: "",
+        gender: ""
+
+    })
     const [name, setName] = useState<string>("")
     const [type, setType] = useState<string>("")
     const [gender, setGender] = useState<string>("")
 
-    function handleChange(){
+    function handleChange(e) {
+        setCharacter({...character, [e.target.name]: e.target.value})
+    }
+
+    function handleSubmit() {
 
     }
 
-    function handleSubmit(){
-
-    }
-    return(
+    return (
 
         <form onSubmit={handleSubmit} className="form">
             <label>Name:</label>
