@@ -5,9 +5,6 @@ import {Route, Routes} from "react-router-dom";
 import Home from "./Home.tsx";
 import CharacterList from "./CharacterList.tsx";
 import AddCharacter from "./AddCharacter.tsx";
-import {getAllCharacters} from "./services/RickMortyService.ts";
-import {useEffect, useState} from "react";
-import type {CharacterType} from "./Character.tsx";
 
 function App() {
 
