@@ -25,6 +25,10 @@ export default function CharactersGallery(){
         }
     };
 
+    // TODO: URL should be updated based on page number
+    // TODO: add search feature
+    // TODO: search results should stay if page changes
+
     return (
         <>
         <div className="card-grid">
