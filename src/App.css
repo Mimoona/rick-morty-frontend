@@ -10,7 +10,8 @@
     overflow: auto;      /* Enable scroll inside this */
     width: 100%;         /* Optional: if content doesn't stretch */
     border: 2px solid green;
-    padding-top: var(--navbar-height);
+    height: calc(100% - var(--navbar-height));
+    margin-top: var(--navbar-height);
 }
 
 .footer {
@@ -67,23 +68,26 @@
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 3.5rem;
     padding: 2rem;
 }
 
+
 .card {
-    background-color: white;
+    background-color: beige;
     border-radius: 10px;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
+
 }
 
 .card img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain;
+    margin-top: 2rem;
 }
 
 .card h1 {
@@ -91,6 +95,34 @@
     padding: 1rem;
     margin: 0;
 }
+
+/*Card detail Page */
+
+.card-detail-wrapper {
+    display: flex;
+    justify-content: center;   /* center horizontally */
+    align-items: center;       /* center vertically */
+    background-color: #f9f9f9; /* optional background */
+}
+
+.card-detail {
+    background: beige;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    height: 800px;
+    text-align: center;
+    overflow: scroll;
+    margin: 40px;
+}
+
+.card-detail ul{
+    list-style-type: none;
+}
+
+ /*Form style*/
 
 .form {
     display: flex;
@@ -104,4 +136,35 @@
 }
 
 
+/* Pagination style*/
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem auto;
+    padding: 0.5rem 1rem;
+}
+
+.pagination button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
 
